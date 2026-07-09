@@ -10,6 +10,7 @@ import AdminDashboard from './components/admins/AdminDashboard'
 import StudentManagement from './components/admins/StudentManagement'
 import AdminLogin from './components/admins/AdminLogin'
 import UserRegister from './components/UserRegister'
+import Login from './components/Login'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='about' Component={About} />
             <Route path='contact' Component={Contact} />
             <Route path='user-register' Component={UserRegister} />
+            <Route path='user-login' Component={Login} />
           </Route>
           <Route path='/admin-login' Component={AdminLogin} />
           <Route path='/admin' Component={AdminLayouts}>
