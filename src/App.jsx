@@ -11,6 +11,9 @@ import StudentManagement from './components/admins/StudentManagement'
 import AdminLogin from './components/admins/AdminLogin'
 import UserRegister from './components/UserRegister'
 import Login from './components/Login'
+import studentDashboard from './components/students/studentDashboard'
+import StudentLayouts from './components/students/StudentLayouts'
+import SAttendence from './components/students/SAttendence'
 
 function App() {
 
@@ -30,6 +33,13 @@ function App() {
             <Route index Component={AdminDashboard} />
             <Route path='student-management' Component={StudentManagement} />
           </Route>
+
+          <Route path='/students' Component={StudentLayouts}>
+            <Route index Component={studentDashboard} />
+            <Route path='student-attendence' Component={SAttendence} />
+          </Route>
+
+
 
 
         </Routes>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const UserRegister = () => {
@@ -17,8 +18,14 @@ const UserRegister = () => {
     //     gender,
     //     stud_img,);
 
+    const nameRef = useRef();
+
     const createStudent = async () => {
         try {
+            if (!name) {
+                alert("Name is complesory")
+                return nameRef.current.focus();
+            }
             const formData = new FormData();
             formData.append("name", name);
             formData.append("email", email);
@@ -59,7 +66,7 @@ const UserRegister = () => {
                                 <h3>Register Today</h3>
                                 <p>Fill in the data below.</p>
                                 <div className="col-md-12">
-                                    <input className="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
+                                    <input className="form-control" type="text" ref={nameRef} name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
                                 </div>
 
                                 <div className="col-md-12">

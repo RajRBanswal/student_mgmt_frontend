@@ -19,11 +19,10 @@ const Login = () => {
                 })
             });
             const result = await response.json();
-            console.log(result);
             if (result.status === 200) {
                 localStorage.setItem("userToken", result.token);
                 alert(result.message);
-                navigate("/students/student-dashboard")
+                navigate("/students")
             } else {
                 alert(result.message)
             }
